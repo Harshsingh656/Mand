@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom, #f7e1f5, #f0f8ff);
+            color: #444;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            color: #d47295;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        nav {
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #444;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d47295;
+        }
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            width: 20px;
+            height: 20px;
+            background: red;
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-300px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-600px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="tum_hi_ho.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="floating-hearts">
+        <!-- Dynamically generated hearts -->
+    </div>
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">Welcome, Mom!</h1>
+        <p>This website is a small tribute to all the love you’ve given me. Explore and enjoy!</p>
+        <nav>
+            <a href="about.html">About You</a>
+            <a href="interactive.html">Surprises</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="message.html">Heartfelt Message</a>
+        </nav>
+    </div>
+    <script>
+        // Generate floating hearts
+        const container = document.querySelector('.floating-hearts');
+        for (let i = 0; i < 50; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            container.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
